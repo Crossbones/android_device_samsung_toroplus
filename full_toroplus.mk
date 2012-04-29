@@ -44,8 +44,3 @@ PRODUCT_NAME := full_toroplus
 PRODUCT_DEVICE := toroplus
 PRODUCT_BRAND := Samsung
 PRODUCT_MODEL := Galaxy Nexus
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=yakju BUILD_ID=IMM76D \
-    BUILD_DISPLAY_ID="EOS IMM76D Nightly $(EOS_BUILD_NUMBER) (`(cd $(ANDROID_BUILD_TOP)/.repo/manifests ; git log -1 --pretty=%h versioned.xml)`)" \
-    BUILD_FINGERPRINT="samsung/mysidspr/toroplus:4.0.4/IMM76D/L700FC12:user/release-keys" \
-    PRIVATE_BUILD_DESC="mysidspr-user 4.0.4 IMM76D L700FC12 release-keys"
