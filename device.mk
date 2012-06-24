@@ -20,5 +20,5 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/toroplus/overlay
 
-$(call inherit-product, device/samsung/toro/device.mk)
+$(call inherit-product, device/samsung/tuna/device.mk)
 $(call inherit-product-if-exists, vendor/samsung/toroplus/device-vendor.mk)
