@@ -21,4 +21,11 @@
 DEVICE_PACKAGE_OVERLAYS := device/samsung/toroplus/overlay
 
 $(call inherit-product, device/samsung/tuna/device.mk)
+
+# Telephony property for CDMA
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cdma.home.operator.numeric=310120 \
+    ro.cdma.home.operator.alpha=Sprint \
+    ro.telephony.default_network=4
+
 $(call inherit-product-if-exists, vendor/samsung/toroplus/device-vendor.mk)
