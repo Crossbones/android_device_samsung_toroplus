@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This file includes all definitions that apply only to toroplus devices
+# This file includes all definitions that apply only to toroplus device
 #
 # Anything that is generic to all tuna products should go in the tuna directory
 #
@@ -20,12 +20,20 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/toroplus/overlay
 
-$(call inherit-product, device/samsung/tuna/device.mk)
-
+PRODUCT_COPY_FILES += \
+	device/samsung/toroplus/apns-conf.xml:system/etc/apns-conf.xml \
+	device/samsung/toroplus/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+	
 # Telephony property for CDMA
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cdma.home.operator.numeric=310120 \
     ro.cdma.home.operator.alpha=Sprint \
-    ro.telephony.default_network=4
+    ro.telephony.default_network=4 \
+    ro.config.vc_call_vol_steps=7
 
+PRODUCT_PACKAGES := \
+	CellBroadcastReceiver
+
+$(call inherit-product, device/samsung/tuna/device.mk)
 $(call inherit-product-if-exists, vendor/samsung/toroplus/device-vendor.mk)
